@@ -5,7 +5,7 @@ function App(){
     <Todo
     title= "hi there"
     description="asd"
-    done={true}
+    done={false}
     
     />
     </>
