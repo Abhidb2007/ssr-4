@@ -14,4 +14,17 @@ export async function POST(req:NextRequest){
     return NextResponse.json({
         token
     })
+
 }
+app.POST("/signin",(req,res)=>{
+    const body=req.body;
+    const username=body.username;
+    const password=body.password;
+    
+    const token=jwt.sign({
+        userId
+},"SECRET");;
+    res.json({
+        token
+    })
+})
