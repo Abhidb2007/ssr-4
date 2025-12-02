@@ -23,7 +23,7 @@ app.POST("/signin",(req,res)=>{
     
     const token=jwt.sign({
         userId
-},"SECRET");;
+},"SECRET");
     res.json({
         token
     })
