@@ -4,6 +4,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "prisma:generate": "prisma generate",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"
@@ -12,6 +13,8 @@
     "prettier": "^3.7.4",
     "turbo": "^2.7.3",
     "typescript": "5.9.2"
+    ,"@types/node": "^20.8.0"
+    ,"prisma": "latest"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {
@@ -21,6 +24,7 @@
   "description": "This Turborepo starter is maintained by the Turborepo core team.",
   "main": "index.js",
   "dependencies": {
+    "@prisma/client": "latest",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-only-warn": "^1.1.0",

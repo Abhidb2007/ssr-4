@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import type { ImageProps } from "next/image";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,3 +30,7 @@ export default function RootLayout({
     </html>
   );
 }
+export type Props = Omit<ImageProps, "src"> & {
+  srcLight: string;
+  srcDark: string;
+};

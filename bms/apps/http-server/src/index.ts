@@ -4,7 +4,7 @@ import {client} from "@repo/db/client";
 const app = express();
 app.use(express.json());
 app.get("/",(req,res)=>{
-    res.send("hi there")
+    res.send("hi ")
 })
 app.post("/signup",async(req,res)=>{
     const username=req.body.username;
