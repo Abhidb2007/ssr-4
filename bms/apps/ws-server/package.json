@@ -7,13 +7,16 @@
     "dev": "npm run build && npm run start",
     "Start": "node dist/index.js"
   },
-  "devDependencies":{
-    "@repo/db":"workspace:*",
-    "@repo/typescript-config":"workspace:*"
-
+  "devDependencies": {
+    "@repo/db": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@types/ws": "^8.18.1",
+    "ws": "^8.19.0"
+  }
 }
