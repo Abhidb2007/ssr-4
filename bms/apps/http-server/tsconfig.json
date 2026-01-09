@@ -1,7 +1,8 @@
 {
-  "extends": "@repo/typescript-config/base.json",
-  "compileOperations":{
-    "rootDir":"./src",
-    "outDir":"./dist"
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@repo/db/*": ["../db/src/*"]
+    }
   }
 }

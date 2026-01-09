@@ -1,24 +1,21 @@
-import  express from "express";
+import {WebSocketServer} from "ws";
 import {client} from "@repo/db/client";
-
-const app = express();
-app.use(express.json());
-app.get("/",(req,res)=>{
-    res.send("hi there ")
+const server=new WebSocketServer({
+    port:3001,
 })
-app.post("/signup",async(req,res)=>{
-    const username=req.body.username;
-    const password=req.body.password;
-    const user=await client.user.create({
-        data:{
-            username:username,
-            password:password
-        }
-    })
-    res.json({
-        message:"signup successful",
-        id:user.id
-    });
+server.on("connection", async (socket) => {
+    try {
+        await client.user.create({
+            data: {
+                username: Math.random().toString(36).slice(2, 10),
+                password: Math.random().toString(36).slice(2, 12),
+            },
+        })
+        socket.send("hi there you are connected to the server")
+    } catch (err) {
+        console.error('ws-server connection handler error:', err)
+        try {
+            socket.send("server error: could not create user")
+        } catch {}
+    }
 })
-
-app.listen (3000);
