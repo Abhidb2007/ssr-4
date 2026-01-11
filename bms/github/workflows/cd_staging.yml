@@ -1,0 +1,6 @@
+name:Deploy to staging
+on:
+  push:
+    branches:
+      -"main"
+jobs      
