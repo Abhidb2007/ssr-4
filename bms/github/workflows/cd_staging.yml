@@ -3,4 +3,10 @@ on:
   push:
     branches:
       -"main"
-jobs      
+jobs:
+  redeploy_everything:
+  name: Deploy everything to the staging cluster      
+  steps:
+    -name:SSH Into server
+    -run:
+    ssh -i ~/.ssh/id_rsa_do root@64.227.147.124
